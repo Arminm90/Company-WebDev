@@ -1,0 +1,154 @@
+:root {
+    /* general colors */
+    --bg-primary: hsl(208, 82%, 44%);
+    --bg-secondary: #2f3542;
+    --bg-white: #ffffff;
+    --accent: #ff7f50;
+    --hover: yellow;
+    --active: #ff7f50;
+
+    /* Text color*/
+    --text-primary: #f6f4f1;
+    --text-secondary: #000000;
+
+    /* Font */
+    --font-primary: arial, helvetica, sans-serif;
+
+    /* Shadow */
+    /* --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+body {
+    background-color: var(--bg-white);
+    font-size: 1rem;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover);
+}
+article {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem auto 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    background-color: var(--bg-primary);
+    color: var(--accent);
+    font-style: italic;
+    padding-left: 1rem;
+    font-size: 3rem;
+    outline-color: var(--text-secondary);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    font-size: 2rem;
+}
+
+H3 {
+    position: fixed;
+    border-style: none;
+    margin-top: 1rem;
+    font-size: 2rem;
+    top: 5rem;
+    left: 2rem;
+    color: var(--accent);
+}
+
+h4 {
+    color: var(--accent);
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+#button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15rem;
+    margin-top: 1rem;
+}
+
+#button button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 15rem;
+    margin-top: 1rem;
+}
+#button label{
+    display: flex;
+    justify-content: center;
+}
+#button #sign-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}
+#button #login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    background-color: none;
+}
+#sign-btn:hover {
+    background-color: var(--active);
+    transition: 0.7s;
+}
+#login-btn:hover {
+    background-color: var(--active);
+    transition: 0.7s;
+}
+
+footer {
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+footer p {
+    text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

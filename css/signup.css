@@ -1,0 +1,91 @@
+#signupForm {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    margin: 5rem auto 5rem;
+    width: 500px;
+    height: 600px;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#signupForm h4 {
+    font-size: 2rem;
+}
+
+#user_role_select select {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#name,
+#lastName,
+#userName,
+#address,
+#email,
+#pwd,
+#cpwd {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#name label,
+#lastName label,
+#userName label,
+#address label,
+#email label,
+#pwd label,
+#cpwd label {
+    margin-left: 0.3rem;
+}
+
+#name input,
+#lastName input,
+#userName input,
+#address input,
+#email input,
+#pwd input,
+#cpwd input {
+    width: 15rem;
+    height: 2.125rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border-style: none;
+    padding-left: 0.3rem;
+}
+
+/* #button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 15rem;
+} */
+
+button #signup-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 2.5rem; 
+    border-radius: 0.5rem;
+    border-style: none;
+    margin: 1rem 1rem;
+}
+#signup-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}
+#signup-btn:hover {
+    background-color: var(--active);
+    transition: 0.7s;
+}

@@ -1,0 +1,62 @@
+#userProfile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    margin: 5rem auto 5rem;
+    width: 500px;
+    height: 600px;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+#userProfile h4 {
+    font-size: 2rem;
+}
+#vieworders {
+    padding: 1rem;
+    max-height: 500px;
+    /* overflow-y: scroll;  */
+    /* border: 1px solid #ccc; */
+    padding: 10px; 
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 0.5rem;
+  }
+
+#vieworders button {
+    margin-right: 2rem;
+  }
+
+#vieworders #frm_search {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
+#button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 15rem;
+}
+
+#button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 2.5rem; 
+    border-radius: 0.5rem;
+    border-style: none;
+    margin: 1rem 1rem;
+}
+
+#delete-btn, #update-btn, #logout-btn {
+    background-color: none; 
+    color: black;
+}
+#update-btn:hover, #delete-btn:hover, #logout-btn:hover {
+    background-color: var(--active); 
+    transition: background-color 0.7s;
+}

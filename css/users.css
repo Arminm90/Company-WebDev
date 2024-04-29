@@ -1,0 +1,12 @@
+#viewUsers {
+    padding: 1rem;
+    max-height: 500px; 
+    overflow-y: scroll;
+    border: 1px solid #ccc; 
+    padding: 10px;
+}
+#viewUsers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 2rem 2rem;
+}

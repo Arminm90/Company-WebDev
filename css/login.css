@@ -1,0 +1,53 @@
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    margin: 5rem auto 5rem;
+    width: 500px;
+    height: 500px;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginForm h4 {
+    font-size: 2rem;
+}
+
+#email,
+#pwd {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#email label,
+#pwd label {
+    margin-left: 0.2rem;
+}
+
+#email input,
+#pwd input {
+    width: 15rem;
+    height: 2.125rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border-style: none;
+    padding-left: 0.3rem;
+}
+
+input::placeholder {
+    text-align: start;
+}
+
+#login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}

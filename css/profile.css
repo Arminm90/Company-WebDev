@@ -1,0 +1,86 @@
+
+#profile{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    margin: 5rem auto 5rem;
+    width: 500px;
+    height: 600px;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile h4 {
+    font-size: 2rem;
+}
+
+#name,
+#lastname,
+#username,
+#address,
+#email,
+#pwd{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#name label,
+#lastname label,
+#username label,
+#address label,
+#email label,
+#pwd label{
+    margin-left: 0.3rem;
+}
+
+#name input,
+#lastname input,
+#username input,
+#address input,
+#email input,
+#pwd input{
+    width: 15rem;
+    height: 2.125rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border-style: none;
+    padding-left: 0.3rem;
+}
+
+input::placeholder {
+    text-align: start;
+}
+#button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15rem;
+    margin-top: 1rem;
+}
+#button #update-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}
+#button #delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}
+#delete-btn:hover {
+    background-color: var(--delete);
+    transition: 0.7s;
+    opacity: 0.9;
+}

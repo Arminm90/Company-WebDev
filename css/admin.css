@@ -1,0 +1,132 @@
+/* #search{
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+} */
+/* #search input{
+    height: 2.125rem;
+    padding-left: 0.3rem;    
+} */
+:root {
+    /* general colors */
+    --bg-primary: hsl(208, 82%, 44%);
+    --bg-secondary: #2f3542;
+    --bg-white: #ffffff;
+    --accent: #ff7f50;
+    --hover: yellow;
+    --active: #ff7f50;
+
+    /* Text color*/
+    --text-primary: #f6f4f1;
+    --text-secondary: #000000;
+
+    /* Font */
+    --font-primary: arial, helvetica, sans-serif;
+
+    /* Shadow */
+    /* --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+
+}
+#admin-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+}
+#admin-nav li{
+    margin-right: 1rem;
+}
+#admin-nav li a{
+    text-decoration: none;
+    color: #000;
+}
+#admin-nav li a:hover{
+    color: var(--accent);
+}
+#users{
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: scroll; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+}
+#users #search{
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+#users #search input{
+    height: 2.125rem;
+    padding-left: 0.3rem;    
+}
+#users #search button{
+    height: 2.125rem;
+    padding-left: 0.3rem;
+    margin-right: 0.3rem;
+}
+#viewUsers {
+    padding: 1rem;
+    max-height: 500px; 
+    overflow-y: scroll;
+    border: 1px solid #ccc; 
+    padding: 10px;
+}
+#viewUsers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 2rem 2rem;
+}
+#viewUsers button{
+    margin-right: 2rem;
+}
+#id_box input{
+    height: 2.125rem;
+}
+#orders{
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: scroll; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+    margin-bottom: 60px;
+}
+
+#orders #frm_search{
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+#orders #frm_search input{
+    height: 2.125rem;
+    padding-left: 0.3rem;
+    margin-right: 0.3rem;    
+}
+
+#vieworders {
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: scroll; 
+    border: 1px solid #ccc;
+    padding: 10px; 
+    margin-bottom: 60px;
+}
+ #vieworders button{
+    margin-right: 2rem;
+} 
+ #vieworders #frm_search{
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+#vieworders {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 2rem 2rem;
+}

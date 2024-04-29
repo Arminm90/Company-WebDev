@@ -1,0 +1,15 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+input #delete-btn{
+    width: 15rem;
+    height: 2.125rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border-style: none;
+    padding-left: 0.3rem;
+}
