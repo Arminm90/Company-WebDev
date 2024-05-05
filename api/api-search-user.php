@@ -1,24 +1,38 @@
 <?php
 session_start();
+require_once __DIR__ . '/../_.php';
 header('Content-Type: application/json');
-require_once __DIR__ . '/../database/_.php';
 
 try {
     $db = _db();
+
+    if (!_is_partner()) {
+        throw new Exception("Unauthorized", 401);
+    }
+
+    if (!isset($_GET['query'])) {
+        throw new Exception("Query parameter is missing", 400);
+    }
+
+    $searchTerm = "%" . $_GET['query'] . "%";
+
     $q = $db->prepare('
-   SELECT orders.order_id, orders.partner_id, orders.user_id, orders.order_date, orders.order_status, orders.order_total, partners.partner_name
-   FROM orders
-   JOIN products ON orders.partner_id = products.partner_id
-   JOIN partners ON products.partner_id = partners.partner_id
-   WHERE orders.user_id = :user_id
-   AND (products.product_name LIKE :searchTerm OR partners.partner_name LIKE :searchTerm)
-');
-    $q->bindValue(':user_id', 10, PDO::PARAM_INT);
-    $q->bindValue(':searchTerm', "%{$_GET['query']}%", PDO::PARAM_STR);
+        SELECT user_id, user_name, user_last_name, user_username, user_email, user_address
+        FROM users
+        WHERE user_name LIKE :searchTerm OR user_email LIKE :searchTerm
+    ');
+    $q->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
 
     $q->execute();
-    $orders = $q->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($orders);
+    $users = $q->fetchAll(PDO::FETCH_ASSOC);
+
+    // Include user name and email in the response
+    foreach ($users as &$user) {
+        $user['user_name'] = htmlspecialchars($user['user_name']);
+        $user['user_email'] = htmlspecialchars($user['user_email']);
+    }
+
+    echo json_encode($users);
 } catch (Exception $e) {
     $status_code = !ctype_digit($e->getCode()) ? 500 : $e->getCode();
     $message = strlen($e->getMessage()) == 0 ? 'error - ' . $e->getLine() : $e->getMessage();

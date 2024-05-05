@@ -196,3 +196,29 @@ function confirmDelete() {
     window.location.href = '/company2/views/delete.php';
   }
 }
+
+document.querySelector('#frm_search').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const query = document.querySelector('#search_query').value;
+  const searchUrl = `/company2/api/api-search-user.php?query=${query}`;
+  
+  // Fetch search results from API
+  fetch(searchUrl)
+    .then(response => response.text())
+    .then(q => {
+      // Display search results if query is not empty
+      const queryResults = document.querySelector('#query_results');
+      if (query.trim() !== '') {
+        queryResults.innerHTML = q;
+        queryResults.style.display = 'block'; // Show the search results
+      } else {
+        queryResults.innerHTML = ''; // Clear the search results
+        queryResults.style.display = 'none'; // Hide the search results
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching search results:', error);
+      document.querySelector('#query_results').innerHTML = '<div>Error fetching search results</div>';
+    });
+});
