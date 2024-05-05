@@ -197,16 +197,16 @@ function confirmDelete() {
   }
 }
 
-document.querySelector('#frm_search').addEventListener('submit', function(event) {
+document.querySelector('#frm_search').addEventListener('submit', function (event) {
   event.preventDefault();
-  
+
   const query = document.querySelector('#search_query').value;
-  const searchUrl = `/company2/api/api-search-user.php?query=${query}`;
-  
+  const searchUrl = `/company2/api/api-search-employees.php?query=${query}`;
+
   // Fetch search results from API
   fetch(searchUrl)
-    .then(response => response.text())
-    .then(q => {
+    .then((response) => response.text())
+    .then((q) => {
       // Display search results if query is not empty
       const queryResults = document.querySelector('#query_results');
       if (query.trim() !== '') {
@@ -217,8 +217,36 @@ document.querySelector('#frm_search').addEventListener('submit', function(event)
         queryResults.style.display = 'none'; // Hide the search results
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Error fetching search results:', error);
-      document.querySelector('#query_results').innerHTML = '<div>Error fetching search results</div>';
+      document.querySelector('#query_results').innerHTML =
+        '<div>Error fetching search results</div>';
     });
 });
+document.querySelector('#frm_search').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const query = document.querySelector('#search_query').value;
+  const searchUrl = `/company2/api/api-search-admin.php?query=${query}`; // Update the API endpoint to reflect the new backend script for admin search
+
+  // Fetch search results from API
+  fetch(searchUrl)
+    .then((response) => response.text())
+    .then((q) => {
+      // Display search results if query is not empty
+      const queryResults = document.querySelector('#query_results');
+      if (query.trim() !== '') {
+        queryResults.innerHTML = q;
+        queryResults.style.display = 'block'; // Show the search results
+      } else {
+        queryResults.innerHTML = ''; // Clear the search results
+        queryResults.style.display = 'none'; // Hide the search results
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching search results:', error);
+      document.querySelector('#query_results').innerHTML =
+        '<div>Error fetching search results</div>';
+    });
+});
+

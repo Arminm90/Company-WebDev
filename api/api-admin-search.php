@@ -6,8 +6,8 @@ header('Content-Type: application/json');
 try {
     $db = _db();
 
-    // Check if the user is authorized as a partner
-    if (!_is_partner() && !_is_admin()) {
+    // Check if the user is authorized as an admin
+    if (!_is_admin()) {
         throw new Exception("Unauthorized", 401);
     }
 
@@ -21,11 +21,12 @@ try {
 
     // Prepare and execute the SQL query
     $q = $db->prepare('
-    SELECT user_id, user_name, user_last_name, user_username, user_email, user_address, user_role
-    FROM users
-    WHERE (user_name LIKE :searchTerm OR user_email LIKE :searchTerm OR user_role LIKE :searchTerm)
-        AND user_role != "admin" /* Exclude admin users from search results for partners */
-');
+        SELECT user_id, user_name, user_last_name, user_username, user_email, user_address, user_role
+        FROM users
+        WHERE user_name LIKE :searchTerm 
+            OR user_email LIKE :searchTerm 
+            OR user_role LIKE :searchTerm
+    ');
 
     $q->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
     $q->execute();
