@@ -70,8 +70,10 @@ function fetchUserById($userId, $db) {
   <label for="user_confirm_password">Confirm New Password</label>
     <input type="password" id="user_confirm_password" name="user_confirm_password">
   </div>
- <button id="update-btn" type="submit">Update</button>
- <button><a href="/company2/views/user.php">Back to Profile</a></button>
+  <div id="button-container">
+  <button id="update-btn" type="submit">Update</button>
+  <button><a href="/company2/views/user.php">Back to Profile</a></button>
+ </div>
 </form>
 </div>
 <?php

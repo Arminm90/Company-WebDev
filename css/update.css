@@ -1,16 +1,16 @@
 #updateForm {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-primary);
-    margin: 5rem auto 5rem;
-    width: 500px;
-    height: 650px;
-    border-radius: 0.5rem;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  margin: 5rem auto 5rem;
+  width: 500px;
+  height: 650px;
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: center;
 }
 #updateForm h4 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 #name,
 #lastName,
@@ -19,11 +19,11 @@
 #email,
 #nPwd,
 #CnPwd {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 #name label,
@@ -33,7 +33,7 @@
 #email label,
 #nPwd label,
 #CnPwd label {
-    margin-left: 0.3rem;
+  margin-left: 0.3rem;
 }
 
 #name input,
@@ -43,36 +43,53 @@
 #email input,
 #nPwd input,
 #CnPwd input {
-    width: 15rem;
-    height: 2.125rem;
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow);
-    border-style: none;
-    padding-left: 0.3rem;
+  width: 15rem;
+  height: 2.125rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  border-style: none;
+  padding-left: 0.3rem;
 }
 
 /* button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 15rem;
-} */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 15rem;
+}*/
 
-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 7rem;
-    height: 2.5rem; 
-    border-radius: 0.5rem;
-    border-style: none;
+#button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border-style: none;
 }
 
+#button-container button {
+  width: 30%;
+  height: 100%;
+  border-radius: 0.5rem;
+  border-style: none;
+  color: black;
+}
+
+#button-container button:hover {
+  background-color: var(--active);
+  transition: background-color 0.5s;
+}
+
+#button-container a {
+  color: black;
+}
+
+/* 
 #update-btn {
-    background-color: none; 
-    color: black;
+  background-color: none;
+  color: black;
 }
 #update-btn:hover {
-    background-color: var(--active); 
-    transition: background-color 0.7s;
-}
+  background-color: var(--active);
+  transition: background-color 0.7s;
+} */
