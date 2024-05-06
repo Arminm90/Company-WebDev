@@ -223,6 +223,7 @@ document.querySelector('#frm_search').addEventListener('submit', function (event
         '<div>Error fetching search results</div>';
     });
 });
+
 document.querySelector('#frm_search').addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -249,4 +250,3 @@ document.querySelector('#frm_search').addEventListener('submit', function (event
         '<div>Error fetching search results</div>';
     });
 });
-

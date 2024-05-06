@@ -60,7 +60,7 @@ $orders = $sql->fetchAll();
         <div>
           <label for="view_user" name="View User">View User: </label>
         </div>
-        <a href="/views/user.php?user_id=<?= $user['user_id'] ?>">
+        <a href="/company2/views/user.php?user_id=<?= $user['user_id'] ?>">
           👁️
         </a>
       </div>
