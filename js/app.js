@@ -197,6 +197,7 @@ function confirmDelete() {
   }
 }
 
+// ############################## Search employees
 document.querySelector('#frm_search').addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -223,7 +224,7 @@ document.querySelector('#frm_search').addEventListener('submit', function (event
         '<div>Error fetching search results</div>';
     });
 });
-
+// ############################## Admin Search for user, partner
 document.querySelector('#frm_search').addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -249,4 +250,37 @@ document.querySelector('#frm_search').addEventListener('submit', function (event
       document.querySelector('#query_results').innerHTML =
         '<div>Error fetching search results</div>';
     });
+});
+
+// ############################## Admin/partner Search for orders
+document.querySelector('#frm_search').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const query = document.querySelector('#search_query').value.trim();
+  const searchUrl = `/company2/api-search-orders.php?query=${query}`;
+
+  // Fetch search results from API
+  fetch(searchUrl)
+      .then((response) => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.text();
+      })
+      .then((q) => {
+          // Display search results if query is not empty
+          const queryResults = document.querySelector('#query_results');
+          if (query !== '') {
+              queryResults.innerHTML = q;
+              queryResults.style.display = 'block'; // Show the search results
+          } else {
+              queryResults.innerHTML = ''; // Clear the search results
+              queryResults.style.display = 'none'; // Hide the search results
+          }
+      })
+      .catch((error) => {
+          console.error('Error fetching search results:', error);
+          document.querySelector('#query_results').innerHTML =
+              '<div>Error fetching search results</div>';
+      });
 });
