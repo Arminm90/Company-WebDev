@@ -36,13 +36,13 @@
     margin-bottom: 60px;
 }
 
-#orders #frm_search{
+#orders #frm_search_orders{
     display: flex;
     justify-content: end;
     margin-top: 1rem;
     margin-right: 1rem;
 }
-#orders #frm_search input{
+#orders #frm_search_orders input{
     height: 2.125rem;
     padding-left: 0.3rem;
     margin-right: 0.3rem;    
@@ -59,7 +59,7 @@
  #vieworders button{
     margin-right: 2rem;
 } 
- #vieworders #frm_search{
+ #vieworders #frm_search_orders{
     display: flex;
     justify-content: end;
     margin-top: 1rem;

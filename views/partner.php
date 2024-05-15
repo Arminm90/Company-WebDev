@@ -3,6 +3,16 @@ session_start();
 
 require_once __DIR__ . '/_header.php';
 require_once __DIR__ . '/../_.php';
+
+if (!_is_partner()) {
+  header('Location: /login');
+  exit();
+}
+
+$db = _db();
+$sql = $db->prepare('SELECT * FROM orders ORDER BY order_id ASC;');
+$sql->execute();
+$orders = $sql->fetchAll();
 ?>
 
 <link rel="stylesheet" href="/company2/css/partner.css">
@@ -16,20 +26,12 @@ require_once __DIR__ . '/../_.php';
 </nav>
 
 <section id="orders">
-  <form id="frm_search">
-    <input name="query" id="search_query" type="text" placeholder="Search">
+  <form id="frm_search_orders">
+    <input name="query" id="search_query_orders" type="text" placeholder="Search Orders">
     <button type="submit">Search</button>
   </form>
-  <div id="query_results" style="display: none;"></div>
-  <?php
-
-  $db = _db();
-  $sql = $db->prepare('SELECT * FROM orders ORDER BY order_id ASC;');
-  $sql->execute();
-  $orders = $sql->fetchAll();
-
-  foreach ($orders as $order) :
-  ?>
+  <div id="query_results_orders" style="display: none;"></div>
+  <?php foreach ($orders as $order) : ?>
     <div id="vieworders">
       <div>
         <div><label for="order_id" name="order id">Order ID:</label></div>

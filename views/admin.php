@@ -22,6 +22,7 @@ ORDER BY order_id ASC;');
 $sql->execute();
 $orders = $sql->fetchAll();
 ?>
+
 <nav id="admin-nav">
   <li>
     Welcome <h4 <?php echo $_SESSION['user_role']; ?>> Admin</h4>
@@ -33,11 +34,11 @@ $orders = $sql->fetchAll();
 <link rel="stylesheet" href="/company2/css/admin.css">
 
 <section id="users">
-  <form id="frm_search">
-    <input name="query" id="search_query" type="text" placeholder="Search">
+  <form id="frm_search_employees">
+    <input name="query" id="search_query_users" type="text" placeholder="Search Users">
     <button type="submit">Search</button>
   </form>
-  <div id="query_results" style="display: none;"></div>
+  <div id="query_results_users" style="display: none;"></div>
 
   <?php foreach ($users as $user) : ?>
     <div id="viewUsers">
@@ -85,15 +86,14 @@ $orders = $sql->fetchAll();
   <?php endforeach ?>
 </section>
 
-
-
-
+<!-- orders -->
 <section id="orders">
-  <form id="frm_search">
-    <input name="query" id="search_query" type="text" placeholder="Search">
+  <form id="frm_search_orders">
+    <input name="query" id="search_query_orders" type="text" placeholder="Search Orders">
     <button type="submit">Search</button>
   </form>
-  <div id="query_results" style="display: none;"></div>
+  <div id="query_results_orders" style="display: none;"></div>
+
   <?php foreach ($orders as $order) : ?>
     <div id="vieworders">
       <div>

@@ -197,80 +197,20 @@ function confirmDelete() {
   }
 }
 
-// ############################## Search employees
-document.querySelector('#frm_search').addEventListener('submit', function (event) {
+
+document.querySelector('#frm_search_employees').addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const query = document.querySelector('#search_query').value;
+  const query = document.querySelector('#search_query_users').value;
   const searchUrl = `/company2/api/api-search-employees.php?query=${query}`;
 
   // Fetch search results from API
   fetch(searchUrl)
-    .then((response) => response.text())
-    .then((q) => {
-      // Display search results if query is not empty
-      const queryResults = document.querySelector('#query_results');
-      if (query.trim() !== '') {
-        queryResults.innerHTML = q;
-        queryResults.style.display = 'block'; // Show the search results
-      } else {
-        queryResults.innerHTML = ''; // Clear the search results
-        queryResults.style.display = 'none'; // Hide the search results
-      }
-    })
-    .catch((error) => {
-      console.error('Error fetching search results:', error);
-      document.querySelector('#query_results').innerHTML =
-        '<div>Error fetching search results</div>';
-    });
-});
-// ############################## Admin Search for user, partner
-document.querySelector('#frm_search').addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  const query = document.querySelector('#search_query').value;
-  const searchUrl = `/company2/api/api-search-admin.php?query=${query}`; // Update the API endpoint to reflect the new backend script for admin search
-
-  // Fetch search results from API
-  fetch(searchUrl)
-    .then((response) => response.text())
-    .then((q) => {
-      // Display search results if query is not empty
-      const queryResults = document.querySelector('#query_results');
-      if (query.trim() !== '') {
-        queryResults.innerHTML = q;
-        queryResults.style.display = 'block'; // Show the search results
-      } else {
-        queryResults.innerHTML = ''; // Clear the search results
-        queryResults.style.display = 'none'; // Hide the search results
-      }
-    })
-    .catch((error) => {
-      console.error('Error fetching search results:', error);
-      document.querySelector('#query_results').innerHTML =
-        '<div>Error fetching search results</div>';
-    });
-});
-
-// ############################## Admin/partner Search for orders
-document.querySelector('#frm_search').addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  const query = document.querySelector('#search_query').value.trim();
-  const searchUrl = `/company2/api-search-orders.php?query=${query}`;
-
-  // Fetch search results from API
-  fetch(searchUrl)
-      .then((response) => {
-          if (!response.ok) {
-              throw new Error('Network response was not ok');
-          }
-          return response.text();
-      })
+      .then((response) => response.text())
       .then((q) => {
           // Display search results if query is not empty
-          const queryResults = document.querySelector('#query_results');
-          if (query !== '') {
+          const queryResults = document.querySelector('#query_results_users');
+          if (query.trim() !== '') {
               queryResults.innerHTML = q;
               queryResults.style.display = 'block'; // Show the search results
           } else {
@@ -280,7 +220,34 @@ document.querySelector('#frm_search').addEventListener('submit', function (event
       })
       .catch((error) => {
           console.error('Error fetching search results:', error);
-          document.querySelector('#query_results').innerHTML =
+          document.querySelector('#query_results_users').innerHTML =
               '<div>Error fetching search results</div>';
       });
+});
+
+document.querySelector('#frm_search_orders').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const query = document.querySelector('#search_query_orders').value.trim();
+  const searchUrl = `/company2/api/api-search-orders.php?query=${query}`;
+
+  // Fetch search results from API
+  fetch(searchUrl)
+    .then((response) => response.text())
+    .then((q) => {
+      // Display search results if query is not empty
+      const queryResults = document.querySelector('#query_results_orders');
+      if (query.trim() !== '') {
+        queryResults.innerHTML = q;
+        queryResults.style.display = 'block'; // Show the search results
+      } else {
+        queryResults.innerHTML = ''; // Clear the search results
+        queryResults.style.display = 'none'; // Hide the search results
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching search results:', error);
+      document.querySelector('#query_results_orders').innerHTML =
+        '<div>Error fetching search results</div>';
+    });
 });

@@ -7,7 +7,7 @@ try {
     $db = _db();
 
     // Check if the user is authorized as a partner
-    if (!_is_partner() && !_is_admin()) {
+    if (!_is_admin()) {
         throw new Exception("Unauthorized", 401);
     }
 

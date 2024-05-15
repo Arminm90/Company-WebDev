@@ -53,17 +53,17 @@
   border: 1px solid #ccc;
   padding: 10px;
 }
-#users #frm_search {
+#users #frm_search_employees {
   display: flex;
   justify-content: end;
   margin-top: 1rem;
   margin-right: 1rem;
 }
-#users #frm_search input {
+#users #frm_search_employees input {
   height: 2.125rem;
   padding-left: 0.3rem;
 }
-#users #frm_search button {
+#users #frm_search_employees button {
   height: 2.125rem;
   padding-left: 0.3rem;
   margin-right: 0.3rem;
@@ -95,13 +95,13 @@
   margin-bottom: 60px;
 }
 
-#orders #frm_search {
+#orders #frm_search_orders {
   display: flex;
   justify-content: end;
   margin-top: 1rem;
   margin-right: 1rem;
 }
-#orders #frm_search input {
+#orders #frm_search_orders input {
   height: 2.125rem;
   padding-left: 0.3rem;
   margin-right: 0.3rem;
@@ -118,7 +118,7 @@
 #vieworders button {
   margin-right: 2rem;
 }
-#vieworders #frm_search {
+#vieworders #frm_search_orders {
   display: flex;
   justify-content: end;
   margin-top: 1rem;
