@@ -8,11 +8,8 @@ async function is_email_available() {
     body: new FormData(frm)
   });
   if (!conn.ok) {
-    // everything that is not a 2xx
     console.log('email not available');
-    document
-      .querySelector('#msg_email_not_available')
-      .classList.remove('hidden');
+    document.querySelector('#msg_email_not_available').classList.remove('hidden');
     return;
   }
   console.log('email available');
@@ -172,31 +169,21 @@ async function update_user() {
       alert('User updated successfully');
       console.log('User updated successfully');
     } else {
-      console.error(
-        'Failed to update user:',
-        responseData ? responseData.message : 'Unknown error'
-      );
+      console.error('Failed to update user:', responseData ? responseData.message : 'Unknown error');
     }
   } catch (error) {
     console.error('An error occurred:', error);
     if (error.message.includes('Invalid JSON response')) {
-      console.error(
-        'Unexpected server response. Redirecting or displaying a message...'
-      );
+      console.error('Unexpected server response. Redirecting or displaying a message...');
     } else {
     }
   }
 }
 function confirmDelete() {
-  if (
-    confirm(
-      'Are you sure you want to delete your account? This action cannot be undone.'
-    )
-  ) {
+  if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
     window.location.href = '/company2/views/delete.php';
   }
 }
-
 
 document.querySelector('#frm_search_employees').addEventListener('submit', function (event) {
   event.preventDefault();
@@ -206,23 +193,22 @@ document.querySelector('#frm_search_employees').addEventListener('submit', funct
 
   // Fetch search results from API
   fetch(searchUrl)
-      .then((response) => response.text())
-      .then((q) => {
-          // Display search results if query is not empty
-          const queryResults = document.querySelector('#query_results_users');
-          if (query.trim() !== '') {
-              queryResults.innerHTML = q;
-              queryResults.style.display = 'block'; // Show the search results
-          } else {
-              queryResults.innerHTML = ''; // Clear the search results
-              queryResults.style.display = 'none'; // Hide the search results
-          }
-      })
-      .catch((error) => {
-          console.error('Error fetching search results:', error);
-          document.querySelector('#query_results_users').innerHTML =
-              '<div>Error fetching search results</div>';
-      });
+    .then((response) => response.text())
+    .then((q) => {
+      // Display search results if query is not empty
+      const queryResults = document.querySelector('#query_results_users');
+      if (query.trim() !== '') {
+        queryResults.innerHTML = q;
+        queryResults.style.display = 'block'; // Show the search results
+      } else {
+        queryResults.innerHTML = ''; // Clear the search results
+        queryResults.style.display = 'none'; // Hide the search results
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching search results:', error);
+      document.querySelector('#query_results_users').innerHTML = '<div>Error fetching search results</div>';
+    });
 });
 
 document.querySelector('#frm_search_orders').addEventListener('submit', function (event) {
@@ -247,7 +233,6 @@ document.querySelector('#frm_search_orders').addEventListener('submit', function
     })
     .catch((error) => {
       console.error('Error fetching search results:', error);
-      document.querySelector('#query_results_orders').innerHTML =
-        '<div>Error fetching search results</div>';
+      document.querySelector('#query_results_orders').innerHTML = '<div>Error fetching search results</div>';
     });
 });

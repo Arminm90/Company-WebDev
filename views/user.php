@@ -1,5 +1,5 @@
 <?php
-    session_start();  // Start the session
+    session_start(); 
 
     require_once __DIR__ . '/_header.php';
     require_once __DIR__ . '/../_.php';
@@ -35,7 +35,6 @@
 <p><strong>Address:</strong> <?php echo $user['user_address']; ?></p>
 <p><strong>Username:</strong> <?php echo $user['user_username']; ?></p>
 <p><strong>Role:</strong> <?php echo $user['user_role']; ?></p>
-<!-- Add other user details as needed -->
 <div id="button">
     <div id="update">
         <button id="update-btn" onclick="window.location.href='/company2/views/update.php'">Update Profile</button>
@@ -125,10 +124,6 @@ $orders = $q->fetchAll(PDO::FETCH_ASSOC);
             </div>
         <?php endforeach; ?>
     </section>
-<!-- Update and Delete Options -->
-<!-- <a href="/views/update.php">Update Profile</a>
-<a href="/views/delete.php" onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">Delete Profile</a>
-<a href="/views/logout.php">Logout</a> -->
 </div>
 <?php
     require_once __DIR__ . '/_footer.php';

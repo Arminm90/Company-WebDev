@@ -3,7 +3,6 @@ session_start();
 require_once __DIR__ . '/_header.php';
 require_once __DIR__ . '/../_.php';
 ?>
-
 <article>
     <h2>Welcome</h2>
     <p>I am thankful for your visit.</p>

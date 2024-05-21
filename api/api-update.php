@@ -40,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_password = isset($_POST['user_password']) ? $_POST['user_password'] : '';
     $user_confirm_password = isset($_POST['user_confirm_password']) ? $_POST['user_confirm_password'] : '';
 
-    // You can add more validation and error handling logic here
 
     // Update user data in the database
     $sql = "UPDATE users SET user_name = :user_name, user_last_name = :user_last_name, user_username = :user_username, user_email = :user_email, user_address = :user_address";

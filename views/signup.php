@@ -43,13 +43,9 @@
       <option value="partner">Partner</option>
   </select>
   </div>
-  
   <button id="signup-btn" type="submit">Signup</button>
-  
-  
 </form>
 </div>
-
 <?php
     require_once __DIR__ . '/_footer.php';
 ?>
