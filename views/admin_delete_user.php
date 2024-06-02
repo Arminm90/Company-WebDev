@@ -1,23 +1,23 @@
-<?php
+ <?php
 
 
-require_once __DIR__ . '/_header.php';
-require_once __DIR__ . '/../_.php';
+    require_once __DIR__ . '/_header.php';
+    require_once __DIR__ . '/../_.php';
 
-if (!isset($_SESSION['admin_id'])) {
-    header('Location: /company2/views/login.php');
-    die();
-}
+    if (!isset($_SESSION['admin_id'])) {
+        header('Location: /company2/views/login.php');
+        die();
+    }
 
-// Handle form submission
-if (isset($_POST['user_id'])) {
-    $_user_id = $_POST['user_id'];
+    // Handle form submission
+    if (isset($_POST['user_id'])) {
+        $_user_id = $_POST['user_id'];
 
-    header('Location: /company2/views/admin/users_list.php?deleted=true');
-    die();
-}
-?>
-
+        header('Location: /company2/views/admin/users_list.php?deleted=true');
+        die();
+    }
+    ?>
+ <!--
 <h4>Delete User</h4>
 
 <form action="/company2/views/admin_delete_user.php" method="POST">
@@ -28,4 +28,4 @@ if (isset($_POST['user_id'])) {
     </select>
 
     <button type="submit">Delete User</button>
-</form>
+</form> -->
