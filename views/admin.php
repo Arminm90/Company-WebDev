@@ -75,7 +75,7 @@ $orders = $sql->fetchAll();
         <?= $user['user_is_blocked'] == 0 ? "unblocked" : "blocked" ?>
       </button>
       <div id="id_box">
-        <form onsubmit="delete_user(); return false">
+        <form onsubmit="delete_user(); return false;">
           <input name="user_id" type="text" value="<?= $user['user_id'] ?>">
           <button>
             🗑️

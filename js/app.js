@@ -3,9 +3,9 @@ console.log('JavaScript file is loaded and running.');
 // ##############################
 async function is_email_available() {
   const frm = event.target.form;
-  const conn = await fetch('api/api-is-email-available.php', {
+  const conn = await fetch('/company2/api/api-is-email-available.php', {
     method: 'POST',
-    body: new FormData(frm)
+    body: new FormData(frm),
   });
   if (!conn.ok) {
     console.log('email not available');
@@ -19,9 +19,9 @@ async function is_email_available() {
 async function delete_user() {
   const frm = event.target;
   console.log(frm);
-  const conn = await fetch('/api/api-admin-delete-user.php', {
+  const conn = await fetch('/company2/api/api-admin-delete-user.php', {
     method: 'POST',
-    body: new FormData(frm)
+    body: new FormData(frm),
   });
   const response = await conn.json();
   console.log(response);
@@ -40,7 +40,7 @@ async function toggle_blocked(user_id, user_is_blocked) {
   }
 
   const conn = await fetch(
-    `http://localhost:8888/api/api-toggle-user-blocked.php?user_id=${user_id}&user_is_blocked=${user_is_blocked}`
+    `http://localhost/company2/api/api-toggle-user-blocked.php?user_id=${user_id}&user_is_blocked=${user_is_blocked}`,
   );
   const data = await conn.text();
   console.log(data);
@@ -51,7 +51,7 @@ async function signup() {
 
   const conn = await fetch('/api/api-signup.php', {
     method: 'POST',
-    body: new FormData(frm)
+    body: new FormData(frm),
   });
 
   const data = await conn.json(); // Parse the JSON response
@@ -68,7 +68,7 @@ async function signup() {
       icon: 'error',
       title: 'Oops...',
       text: data.message || 'Something went wrong!',
-      footer: '<a href="">Why do I have this issue?</a>'
+      footer: '<a href="">Why do I have this issue?</a>',
     });
   }
 }
@@ -78,7 +78,7 @@ async function login() {
   try {
     const conn = await fetch('/api/api-login.php', {
       method: 'POST',
-      body: new FormData(frm)
+      body: new FormData(frm),
     });
 
     const responseData = await conn.json();
@@ -113,7 +113,7 @@ async function login() {
         icon: 'error',
         title: 'Oops...',
         text: 'Failed to login. Please try again.',
-        footer: '<a href="">Why do I have this issue?</a>'
+        footer: '<a href="">Why do I have this issue?</a>',
       });
     }
   } catch (error) {
@@ -122,7 +122,7 @@ async function login() {
       icon: 'error',
       title: 'Oops...',
       text: 'An error occurred. Please try again.',
-      footer: '<a href="">Why do I have this issue?</a>'
+      footer: '<a href="">Why do I have this issue?</a>',
     });
   }
 }
@@ -148,7 +148,7 @@ async function update_user() {
   try {
     const conn = await fetch('/company2/api/api-update.php', {
       method: 'POST',
-      body: formData
+      body: formData,
     });
 
     if (!conn.ok) {

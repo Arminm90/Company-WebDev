@@ -20,12 +20,12 @@ if (isset($_POST['user_id'])) {
 
 <h4>Delete User</h4>
 
-<form action="/views/admin_delete_user.php" method="POST">
+<form action="/company2/views/admin_delete_user.php" method="POST">
     <label for="user_id">Select User ID:</label>
     <select name="user_id" id="user_id">
         <option value="1">1</option>
         <option value="2">2</option>
     </select>
-    
+
     <button type="submit">Delete User</button>
 </form>
