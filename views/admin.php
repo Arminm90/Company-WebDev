@@ -42,11 +42,11 @@ $orders = $sql->fetchAll();
 
   <?php foreach ($users as $user) : ?>
     <div id="viewUsers">
-      <div>
+      <!-- <div>
         <div><label for="user_id" name="User ID">User ID: </label>
         </div>
         <?= $user['user_id'] ?>
-      </div>
+      </div> -->
       <div>
         <div><label for="user_name" name="User Name">User Name: </label>
         </div>
